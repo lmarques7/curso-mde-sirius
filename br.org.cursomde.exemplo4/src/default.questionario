@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionario:Questionario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:questionario="http://www.example.org/questionario">
+  <perguntas mensagem="Olá, bem vindo ao questionário!" inicio="true">
+    <alternativas proximaPergunta="//@perguntas.1" texto="Ok"/>
+  </perguntas>
+  <perguntas mensagem="Qual o seu nome?">
+    <alternativas proximaPergunta="//@perguntas.2" texto="Leandro"/>
+    <alternativas proximaPergunta="//@perguntas.3" texto="Não sei"/>
+  </perguntas>
+  <perguntas mensagem="Olá Leandro, bem-vindo" fim="true"/>
+  <perguntas mensagem="Vc não sabe seu próprio nome, cuidado!!" fim="true"/>
+</questionario:Questionario>

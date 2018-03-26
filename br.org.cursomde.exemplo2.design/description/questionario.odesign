@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="questionario" version="12.0.0.2017041100">
+  <ownedViewpoints name="questionario" modelFileExtension="questionario">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" domainClass="questionario::Questionario" enablePopupBars="true">
+      <metamodel href="http://www.example.org/questionario#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Pergunta" semanticCandidatesExpression="feature:perguntas" domainClass="questionario::Item">
+          <style xsi:type="style:SquareDescription" labelExpression="feature:mensagem" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Resposta" domainClass="questionario::Resposta">
+          <style xsi:type="style:DotDescription" labelExpression="feature:texto" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="setResposta" sourceMapping="//@ownedViewpoints[name='questionario']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='Pergunta']" targetMapping="//@ownedViewpoints[name='questionario']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='Resposta']" targetFinderExpression="feature:alternativas">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="proximaPergunta" sourceMapping="//@ownedViewpoints[name='questionario']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='Resposta']" targetMapping="//@ownedViewpoints[name='questionario']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='Pergunta']" targetFinderExpression="feature:proximaPergunta">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="br.org.cursomde.exemplo2.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
